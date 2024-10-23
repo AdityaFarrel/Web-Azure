@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wani Ngeyel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Kelompok - Wani Ngeyel</h1>
+    <div class="container">
+        <div class="profiles">
+            {% for data in data_list %}
+            <div class="card">
+                <img src="{{ url_for('static', filename=data['foto']) }}" alt="Foto Profil">
+                <h2>{{ data['nama'] }}</h2>
+                <p><strong>NIM:</strong> {{ data['nim'] }}</p>
+                <p><strong>Prodi:</strong> {{ data['prodi'] }}</p>
+                <p><strong>Hobi:</strong> {{ data['hobi'] }}</p>
+                <p class="description">{{ data['deskripsi'] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="footer">
+            <p>© 2024 Wani Ngeyel. Jan Ngawur Kang</p>
+            <p>Lek Slamet Kaos e Polosan
+               Senajan Mumet Ora Oleh Oplosan
+            </p>
+        </div>
+    </div>
+</body>
+</html>

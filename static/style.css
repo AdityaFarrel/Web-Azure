@@ -1,0 +1,146 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0d141f, #1e2a47);
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    position: absolute; /* Absolute positioning to center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Shift content to center */
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+/* Styling for heading */
+h1 {
+    position: absolute; 
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    color: #00e6e6;
+    margin-bottom: 40px; /* Additional margin if needed */
+    font-size: 40px;
+    text-shadow: 2px 2px 8px rgba(0, 230, 230, 0.5);
+}
+
+/* Background Animation: Digital Dots and Lines */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/circles.png') repeat;
+    opacity: 0.05;
+    z-index: 1;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1), transparent 70%);
+    animation: rotation 30s infinite linear;
+    z-index: 0;
+}
+
+/* Animasi rotasi background */
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Styling Profiles */
+.profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px; /* Kurangi border-radius */
+    padding: 20px 15px; /* Kurangi padding */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Kurangi intensitas shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(8px); /* Kurangi blur */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 40px rgba(0, 230, 230, 0.5);
+}
+
+.card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: block; /* Menjadikan gambar sebagai block element */
+    margin: 0 auto 20px; /* Otomatis margin kiri dan kanan untuk tengah */
+    object-fit: cover;
+    border: 4px solid #00e6e6;
+    transition: transform 0.3s;
+}
+
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+.card h2 {
+    margin: 10px 0;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.card p {
+    margin: 5px 0;
+    color: #dfe6e9;
+    font-size: 16px;
+}
+
+.description {
+    margin-top: 10px;
+    font-style: italic;
+    color: #b2bec3;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #b2bec3;
+    bottom: 10;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+    .card {
+        padding: 20px 15px;
+    }
+}
